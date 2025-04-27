@@ -1,6 +1,6 @@
 # JSON Placeholder REST API
 
-A Spring Boot application that provides a full CRUD REST API for posts, retrieving data from the [JSON Placeholder Service](https://jsonplaceholder.typicode.com/posts).
+A full-stack application that provides a CRUD REST API for posts, retrieving data from the [JSON Placeholder Service](https://jsonplaceholder.typicode.com/posts) with a professional ReactJS frontend.
 
 ## Author
 
@@ -8,13 +8,23 @@ A Spring Boot application that provides a full CRUD REST API for posts, retrievi
 
 ## Technologies Used
 
+### Backend
 - Java 17
 - Spring Boot 3.4.5
 - Spring Web
 - Lombok
 - JUnit 5 & Mockito for testing
 
+### Frontend
+- React 18
+- Axios for API calls
+- React Bootstrap for UI components
+- React Hooks (useState, useEffect, useContext)
+- Context API for state management
+
 ## Project Structure
+
+### Backend Structure
 
 ```
 src/
@@ -44,6 +54,32 @@ src/
                     ├── controller/
                     │   └── PostControllerTest.java
                     └── RestApplicationTests.java
+```
+
+### Frontend Structure
+
+```
+frontend/
+├── public/
+│   ├── index.html
+│   └── manifest.json
+└── src/
+    ├── components/
+    │   ├── DeleteConfirmation.js
+    │   ├── LoadingSpinner.js
+    │   ├── Pagination.js
+    │   ├── PostForm.js
+    │   ├── PostItem.js
+    │   ├── PostList.js
+    │   └── SearchBar.js
+    ├── context/
+    │   └── PostContext.js
+    ├── services/
+    │   └── api.js
+    ├── App.css
+    ├── App.js
+    ├── index.css
+    └── index.js
 ```
 
 ## API Endpoints
@@ -154,22 +190,56 @@ Response: 204 No Content
 
 ## How to Run
 
+### Backend
+
 1. Clone the repository
 2. Navigate to the project directory
-3. Run the application using Maven:
+3. Run the backend application using Maven:
    ```
    ./mvnw spring-boot:run
    ```
 4. The API will be available at `http://localhost:8080/api/posts`
 
+### Frontend
+
+1. Navigate to the frontend directory:
+   ```
+   cd frontend
+   ```
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm start
+   ```
+4. The React application will open in your browser at `http://localhost:3000`
+
+Note: The frontend is configured to proxy API requests to the backend at `http://localhost:8080`, so make sure the backend is running before starting the frontend.
+
 ## How to Test
 
-Run the tests using Maven:
+### Backend Tests
+
+Run the backend tests using Maven:
 ```
 ./mvnw test
 ```
 
+### Frontend Tests
+
+Navigate to the frontend directory and run the tests:
+```
+cd frontend
+npm test
+```
+
+This will run the React testing suite and show the test results in the console.
+
 ## Error Handling
+
+### Backend Error Handling
 
 The API includes comprehensive error handling:
 
@@ -178,3 +248,14 @@ The API includes comprehensive error handling:
 - 500 Internal Server Error: For unexpected errors
 
 Each error response includes a timestamp, status code, error type, message, and path.
+
+### Frontend Error Handling
+
+The React application includes comprehensive error handling:
+
+- Loading states: Displays a spinner while data is being fetched
+- Error messages: Shows user-friendly error messages when API calls fail
+- Empty states: Displays appropriate messages when no posts are available
+- Form validation: Validates user input in create/edit forms
+- Toast notifications: Shows success/error messages after operations
+- Confirmation dialogs: Asks for confirmation before destructive actions
