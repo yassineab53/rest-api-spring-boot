@@ -1,0 +1,29 @@
+Projet personnel – Application de Gestion de Posts (ReactJS + Spring Boot)
+(Mars 2025 – Avril 2025)
+
+Développé une application web complète avec Spring Boot (backend) et ReactJS (frontend) permettant la gestion de posts via un CRUD REST API connecté au service JSONPlaceholder.
+
+Conçu un backend RESTful avec Spring Boot, structuré en couches (controller, service, model) avec gestion des exceptions et support CORS.
+
+Créé un frontend ReactJS moderne avec :
+
+Affichage dynamique des posts (Axios, Hooks),
+
+Pagination, recherche en temps réel,
+
+Formulaires de création et de mise à jour dans des modales,
+
+Confirmation de suppression avec dialogue,
+
+Gestion des erreurs et chargement optimisé (spinners, notifications),
+
+Context API pour la gestion globale de l’état.
+
+Stylisé l’interface avec Bootstrap pour une expérience utilisateur fluide et responsive.
+
+Respect des bonnes pratiques de structuration : séparation en dossiers components, services, context.
+
+Documentation et tests fonctionnels complets pour garantir la robustesse de l’application.
+
+Technologies utilisées :
+ReactJS, Axios, React Context API, Bootstrap, Spring Boot, Java, REST API, Maven.
